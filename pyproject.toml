@@ -18,3 +18,7 @@ license = {text = "MIT"}
 [tool.odm.scripts]
 dev = "uvicorn main:app --reload"
 test = "pytest"
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=7.4.2",
+]
