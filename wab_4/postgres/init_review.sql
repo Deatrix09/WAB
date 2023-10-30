@@ -1,0 +1,3 @@
+CREATE USER review;
+CREATE DATABASE review;
+GRANT ALL PRIVILEGES ON DATABASE review to review;

@@ -27,3 +27,19 @@ services:
 #      - ME_CONFIG_BASICAUTH_PASSWORD=pass   
     ports:
       - 8081:8081
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_MULTIPLE_DATABASES=review,coffee_shop
+    volumes:
+      - ./postgres:/docker-entrypoint-initdb.d:ro
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
